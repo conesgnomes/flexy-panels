@@ -1,0 +1,17 @@
+.panel {
+  height: 200px;
+  margin: 5px 10px;
+  flex-basis: 240px;
+  flex-grow: 1;
+}
+
+.panel:nth-child(1),
+.panel:nth-child(7) {
+  flex-basis: 340px;
+}
+
+@for $index from 1 through length($color-map) {
+  .panel:nth-child(#{$index}) {
+    background-color: nth($color-map, $index);
+  }
+}
